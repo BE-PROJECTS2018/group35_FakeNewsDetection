@@ -1,0 +1,29 @@
+{% extends 'app/base.html' %}
+{% block content %}
+<form method="POST" action="{% url 'index' %}">
+	{% csrf_token %}
+	<div class="form-group">
+		<label for="url">
+			Put your URL of the news here :
+		</label>
+		<input class=" form-control" type="text" name="url">
+		<br>
+		<br>
+		<button class="btn btn-info" type="submit">Submit</button>
+	</div>
+</form>
+<div class="result">
+	<b>{{url_text}}</b>
+	<br>
+	<p>{{url}}</p>
+	<b>{{static_text0}}</b>
+	<br>
+	<p>{{summary}}</p>
+	<b>{{static_text}}</b>
+	<br>
+	<p>{{static_text2}}{{result}}</p>
+	<br>
+	<p>{{static_text3}}{{score}}</p>
+	
+</div>
+{% endblock %}
